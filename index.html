@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interplanetary Life Dashboard 🚀</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <!-- UI Controls -->
+    <div class="ui-controls">
+        <button id="quiz-btn" class="icon-btn" title="Play Quiz">🎮</button>
+        <button id="theme-btn" class="icon-btn" title="Toggle Theme">☀️</button>
+        <button id="gravity-mode-btn" class="antigravity-btn icon-btn" title="Toggle Physics">🚫⚖️</button>
+    </div>
+
+    <!-- ... existing container ... -->
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-quiz" class="close">&times;</span>
+            <h2>🚀 Space Trivia Quiz 🪐</h2>
+            <div id="quiz-container">
+                <p id="quiz-question">Loading question...</p>
+                <div id="quiz-options" class="options-grid"></div>
+                <p id="quiz-feedback"></p>
+                <button id="next-question-btn" class="btn primary hidden">Next Question ➡️</button>
+            </div>
+            <div id="quiz-score">Score: <span id="score-val">0</span></div>
+        </div>
+    </div>
+
+    <div class="container" id="main-container">
+        <header id="app-header">
+            <div id="avatar-display" class="avatar-container">👨‍🚀</div>
+            <h1><span class="emoji">🌍</span> Interplanetary Life Dashboard <span class="emoji">🪐</span></h1>
+            <p>Calculate your true space age, next birthday, and life expectancy!</p>
+        </header>
+
+        <section class="input-section" id="input-area">
+            <div class="input-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+            </div>
+            <button id="calculate-btn" class="btn primary">Calculation</button>
+            <button id="reset-btn" class="btn secondary">Reset 🔄</button>
+        </section>
+
+        <section id="result-section" class="result-section hidden">
+
+            <!-- Hero Stats: Earth Age & Next Birthday -->
+            <div class="hero-stats">
+                <div class="stat-card earth-highlight" id="earth-card">
+                    <div class="earth-badge">You are here 🌍</div>
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-info">
+                        <h3>Earth Age</h3>
+                        <div class="stat-value" id="earth-age-display">0 Years</div>
+                        <div class="small-text" id="earth-exact-display">0m 0d</div>
+                    </div>
+                </div>
+
+                <div class="stat-card" id="birthday-card">
+                    <div class="stat-icon">🎂</div>
+                    <div class="stat-info">
+                        <h3>Next Birthday In</h3>
+                        <div class="stat-value" id="next-birthday-display">0 Days</div>
+                        <div class="small-text">Time to party! 🎉</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Planet Grid -->
+            <div id="planet-grid" class="planet-grid">
+                <!-- Planets injected by JS -->
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Made with ❤️ & ☕ | Physics Mode Available</p>
+
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
